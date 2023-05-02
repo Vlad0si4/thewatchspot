@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Watch Spot</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfnBBwOLBAGwpm9AAABV0lEQVQoz0XQP0hUARwH8M/vvf7cq6C8Qu4eRIVwjkGGS0ZhtjRF0CLVtTQ2OjhWNDeJtJ2DY0tLg3QgadFQBBE0R3HVUWqKp3Tea3hD2/cL3z98vwFjHCwua7qohh9WLGjbfY8Yg1ox67YhBgqJYN2ixzohzamZ15RRGHHGmr6oGDcayzbT/ICHRRMGrnjkhg0fhaAhi5eJyeIW7BlxX13muhMGwLSriTuqFA6755Rtfaed91cBxzTT+hNH4aZpA8+kKoZU/bIlqCbqDJw0ace2Q9oqJlzQK0uGEwhdsxbtN+WSTMe8NQES3wk7Ol7ZdcRZfS2fJGVCN4mVEu3z2Vuw5Hk5E7Ga5j3XZIG+b45746l1aenaiAdp/kVuvGzralu1VZ6NWDCX5nvxwahGCKHgf/wLM36nuWLTskxDpRQF/NGKGV+V7BwVU+6aMIyfXmvFkt47/AM5j2KWZpIujAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0wNC0yOFQxNDo0NDoxNiswMDowMDBdpGQAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMDQtMjhUMTQ6NDQ6MTYrMDA6MDBBABzYAAAAV3pUWHRSYXcgcHJvZmlsZSB0eXBlIGlwdGMAAHic4/IMCHFWKCjKT8vMSeVSAAMjCy5jCxMjE0uTFAMTIESANMNkAyOzVCDL2NTIxMzEHMQHy4BIoEouAOoXEXTyQjWVAAAAAElFTkSuQmCC"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;600&family=Raleway:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    
+    <script type="module" crossorigin src="/thewatchspot/assets/index-94029e5b.js"></script>
+    <link rel="stylesheet" href="/thewatchspot/assets/index-227fd687.css">
+  </head>
+
+  <body>
+    <header class="header" data-header>
+  <div class="header-wrapper container">
+    <a class="header-logo" href="./index.html">
+      <picture>
+        <source
+          media="(max-width: 767px)"
+          srcset="data:image/png;base64,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 1x, /thewatchspot/assets/logo-header-mob-2x-ef69bfda.png 2x"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="data:image/png;base64,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 1x, /thewatchspot/assets/logo-header-big-2x-e1ac6455.png 2x"
+        />
+        <img src="data:image/png;base64,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" alt="logo" />
+      </picture>
+      <span>thewatchspot</span></a
+    >
+    <nav class="header-nav">
+      <ul class="header-list">
+        <li class="header-item">
+          <a class="header-link" href="#about">About us</a>
+        </li>
+        <li class="header-item">
+          <a class="header-link" href="#catalog">Catalog</a>
+        </li>
+        <li class="header-item">
+          <a class="header-link" href="#sale">Sale</a>
+        </li>
+      </ul>
+    </nav>
+
+    <a class="tel-link" href="tel:+380684439426">+380 (68) 443-94-26</a>
+
+    <button
+      class="menu-toggle js-open-menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg class="menu-toggle-icon" width="24" height="24">
+        <use href="/thewatchspot/assets/sprite-5025b898.svg#icon-burger"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+
+<div class="menu-container js-menu-container" id="mobile-menu">
+  <a class="header-logo menu" href="../index.html">
+    <picture>
+      <source
+        media="(max-width: 767px)"
+        srcset="data:image/png;base64,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 1x, /thewatchspot/assets/logo-header-mob-2x-ef69bfda.png 2x"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="
+          ./images/logo-header/logo-header-big-x1.png 1x,
+          ./images/logo-header/logo-header-big-x2.png 2x
+        "
+      />
+      <img
+        src="data:image/png;base64,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"
+        alt="logo"
+      /> </picture
+    ><span>thewatchspot</span></a
+  >
+
+  <button class="menu-toggle js-close-menu">
+    <svg class="menu-close" width="24" height="24">
+      <use href="/thewatchspot/assets/sprite-5025b898.svg#icon-close"></use>
+    </svg>
+  </button>
+
+  <ul class="mobile-menu">
+    <li>
+      <a class="menu-text js-close-menu" href="#about">About us</a>
+    </li>
+    <li>
+      <a class="menu-text js-close-menu" href="#catalog">Catalog</a>
+    </li>
+    <li>
+      <a class="menu-text js-close-menu" href="#sale">Sale</a>
+    </li>
+  </ul>
+</div>
+
+    <main>
+      <section class="hero section">
+  <div class="hero-container container">
+    <h1 class="hero-title">Welcome to our collection of premium watches</h1>
+    <div class="hero-wrapper">
+      <div class="swiper mySwiper">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/slider-1_226-a6d855f4.webp 226w, /thewatchspot/assets/slider-1_348-e6ac9b25.webp 348w, /thewatchspot/assets/slider-1_452-69b9e355.webp 452w, /thewatchspot/assets/slider-1_696-a501e297.webp 696w"
+                sizes="(min-width: 768px) 348px, (max-width: 767px) 226px, 100vw"
+                type="image/webp"
+              />
+              <img
+                class="swiper-slide-img"
+                srcset="/thewatchspot/assets/slider-1_226-49f2467b.png 226w, /thewatchspot/assets/slider-1_348-398e9913.png 348w, /thewatchspot/assets/slider-1_452-907ee212.png 452w, /thewatchspot/assets/slider-1_696-234a9f9a.png 696w"
+                sizes="(min-width: 768px) 348px, (max-width: 767px) 226px, 100vw"
+                src="/thewatchspot/assets/slider-1_226-49f2467b.png"
+                alt="Dark green wristwatch"
+              />
+            </picture>
+          </li>
+          <li class="swiper-slide">
+            <picture>
+              <source
+                srcset="data:image/webp;base64,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 226w, /thewatchspot/assets/slider-2_348-df355fad.webp 348w, /thewatchspot/assets/slider-2_452-22d0f5ac.webp 452w, /thewatchspot/assets/slider-2_696-9b3c9bf9.webp 696w"
+                sizes="(min-width: 768px) 348px, (max-width: 767px) 226px, 100vw"
+                type="image/webp"
+              />
+              <img
+                class="swiper-slide-img"
+                srcset="/thewatchspot/assets/slider-2_226-e179167a.png 226w, /thewatchspot/assets/slider-2_348-ff54017e.png 348w, /thewatchspot/assets/slider-2_452-61297edd.png 452w, /thewatchspot/assets/slider-2_696-8a6424cd.png 696w"
+                sizes="(min-width: 768px) 348px, (max-width: 767px) 226px, 100vw"
+                src="/thewatchspot/assets/slider-2_226-e179167a.png"
+                alt="Wristwatch with black watch strap"
+              />
+            </picture>
+          </li>
+          <li class="swiper-slide">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/slider-3_226-09968326.webp 226w, /thewatchspot/assets/slider-3_348-83340091.webp 348w, /thewatchspot/assets/slider-3_452-7af236ba.webp 452w, /thewatchspot/assets/slider-3_696-5aed950a.webp 696w"
+                sizes="(min-width: 768px) 348px, (max-width: 767px) 226px, 100vw"
+                type="image/webp"
+              />
+              <img
+                class="swiper-slide-img"
+                srcset="/thewatchspot/assets/slider-3_226-fc08d1f7.png 226w, /thewatchspot/assets/slider-3_348-8abd8eb1.png 348w, /thewatchspot/assets/slider-3_452-620d8572.png 452w, /thewatchspot/assets/slider-3_696-47b44fab.png 696w"
+                sizes="(min-width: 768px) 348px, (max-width: 767px) 226px, 100vw"
+                src="/thewatchspot/assets/slider-3_226-fc08d1f7.png"
+                alt="Steel wristwatch"
+              />
+            </picture>
+          </li>
+          <li class="swiper-slide">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/slider-4_226-aab093ea.webp 226w, /thewatchspot/assets/slider-4_348-4e63a20b.webp 348w, /thewatchspot/assets/slider-4_452-c39f2f1e.webp 452w, /thewatchspot/assets/slider-4_696-7ba92116.webp 696w"
+                sizes="(min-width: 768px) 348px, (max-width: 767px) 226px, 100vw"
+                type="image/webp"
+              />
+              <img
+                class="swiper-slide-img"
+                srcset="/thewatchspot/assets/slider-4_226-504d7a09.png 226w, /thewatchspot/assets/slider-4_348-42ef3d97.png 348w, /thewatchspot/assets/slider-4_452-45a1e811.png 452w, /thewatchspot/assets/slider-4_696-97a68503.png 696w"
+                sizes="(min-width: 768px) 348px, (max-width: 767px) 226px, 100vw"
+                src="/thewatchspot/assets/slider-4_226-504d7a09.png"
+                alt="Wristwatch with black watch strap"
+              />
+            </picture>
+          </li>
+          <li class="swiper-slide">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/slider-5_226-894dffc9.webp 226w, /thewatchspot/assets/slider-5_348-b51b3bd3.webp 348w, /thewatchspot/assets/slider-5_452-31455e90.webp 452w, /thewatchspot/assets/slider-5_696-3ad53d78.webp 696w"
+                sizes="(min-width: 768px) 348px, (max-width: 767px) 226px, 100vw"
+                type="image/webp"
+              />
+              <img
+                class="swiper-slide-img"
+                srcset="/thewatchspot/assets/slider-5_226-b084dedf.png 226w, /thewatchspot/assets/slider-5_348-8cdf3d9f.png 348w, /thewatchspot/assets/slider-5_452-ceed1550.png 452w, /thewatchspot/assets/slider-5_696-cb3fab6b.png 696w"
+                sizes="(min-width: 768px) 348px, (max-width: 767px) 226px, 100vw"
+                src="/thewatchspot/assets/slider-5_226-b084dedf.png"
+                alt="Steel wristwatch"
+              />
+            </picture>
+          </li>
+        </ul>
+        <div class="swiper-controls">
+          <ul class="swiper-buttons">
+            <li class="swiper-buttons-item">
+              <button class="swiper-btn swiper-btn-prev" type="button">
+                <svg class="swiper-btn-icon">
+                  <use href="/thewatchspot/assets/sprite-5025b898.svg#slider-btn-prev"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="swiper-buttons-item">
+              <button class="swiper-btn swiper-btn-next" type="button">
+                <svg class="swiper-btn-icon">
+                  <use href="/thewatchspot/assets/sprite-5025b898.svg#slider-btn-next"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <p class="hero-desc">
+        Our watches are not just timepieces, but also an expression of your
+        personality and lifestyle. From classic designs to modern ones, we have
+        a watch to suit every taste and occasion.
+      </p>
+      <picture>
+        <source
+          srcset="/thewatchspot/assets/hero_mob@1x-e221dffc.webp 335w, /thewatchspot/assets/hero_mob@2x-4d00d236.webp 670w, /thewatchspot/assets/hero_desk@1x-5cb97c58.webp 676w, /thewatchspot/assets/hero_tab@1x-a5ea94d6.webp 704w, /thewatchspot/assets/hero_desk@2x-e2ead5d5.webp 1352w, /thewatchspot/assets/hero_tab@2x-32370336.webp 1408w"
+          sizes="(min-width: 1280px) 676px, (min-width: 768px) 704px, (max-width: 767px) 335px"
+          type="image/webp"
+        />
+        <img
+          class="hero-img"
+          srcset="/thewatchspot/assets/hero_mob@1x-ddaba94d.jpg 335w, /thewatchspot/assets/hero_mob@2x-0a43a882.jpg 670w, /thewatchspot/assets/hero_desk@1x-3aad7e90.jpg 676w, /thewatchspot/assets/hero_tab@1x-9a73f8df.jpg 704w, /thewatchspot/assets/hero_desk@2x-dad2bdeb.jpg 1352w, /thewatchspot/assets/hero_tab@2x-2c82908a.jpg 1408w"
+          sizes="(min-width: 1280px) 676px, (min-width: 768px) 704px, (max-width: 767px) 335px"
+          src="/thewatchspot/assets/hero_mob@1x-ddaba94d.jpg"
+          alt="Watch on a wrist"
+        />
+      </picture>
+    </div>
+  </div>
+</section>
+
+      <section class="about-us section">
+  <div class="container about-container">
+    <h2 class="about-title my-element" id="about">About us</h2>
+
+    <div class="about-first">
+      <ul class="about-list">
+        <li class="about-text-item">
+          <p class="about-text">
+            Welcome to our premium watch collection, where luxury and style meet
+            functionality and precision. Our selection of timepieces embodies
+            the very best in Swiss craftsmanship and engineering, ensuring that
+            you'll always have a reliable and stylish accessory on your wrist.
+          </p>
+        </li>
+        <li class="about-text-item">
+          <p class="about-text">
+            At our premium watch collection, we believe that a watch is more
+            than just a timekeeping device - it's a statement piece that
+            reflects your personality and style. So why settle for anything less
+            than the best? Browse our collection today and discover the perfect
+            watch for you.
+          </p>
+        </li>
+      </ul>
+    </div>
+    <video class="about-second about-gif" autoplay muted loop>
+      <source src="/thewatchspot/assets/watchspot-572f4f66.mp4">
+    </video>
+
+  </div>
+</section>
+
+      <section class="section catalog-sect">
+  <div class="container catalog-cont">
+    <h2 class="catalog-name my-element" id="catalog">Catalog</h2>
+    <ul class="catalog-menu">
+      <li class="catalog-item">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/first@1x-b1c56ed9.webp 1x, /thewatchspot/assets/first@2x-8851c67c.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/first@1x-447a4faf.jpg 1x, /thewatchspot/assets/first@2x-9ab37034.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/first@1x-447a4faf.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs width">
+            <p class="catalog-describe">
+              Tube Watch S42 Date Steel With Black Case
+            </p>
+            <span class="catalog-price my-element">&#8364;395</span>
+          </div>
+        </a>
+      </li>
+
+      <li class="catalog-item">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/second@1x-02dab7e3.webp 1x, /thewatchspot/assets/second@2x-afe3916e.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/second@1x-954d3354.jpg 1x, /thewatchspot/assets/second@2x-658ebbfe.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/second@1x-954d3354.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs width">
+            <p class="catalog-describe">Avondale Watch Police For Men</p>
+            <span class="catalog-price my-element">&#8364;800</span>
+          </div>
+        </a>
+      </li>
+      <li class="catalog-item">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/third@1x-0e4d97e7.webp 1x, /thewatchspot/assets/third@2x-48e3cd6b.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/third@1x-035c0b52.jpg 1x, /thewatchspot/assets/third@2x-685d52e0.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/third@1x-035c0b52.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs width">
+            <p class="catalog-describe">
+              Diver 300M Co-Axial Master Chronometer
+            </p>
+            <span class="catalog-price my-element">&#8364;600</span>
+          </div>
+        </a>
+      </li>
+
+      <li class="catalog-item">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/fourth@1x-b450b4e8.webp 1x, /thewatchspot/assets/fourth@2x-86091d0e.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/fourth@1x-2de61e4d.jpg 1x, /thewatchspot/assets/fourth@2x-a1721612.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/fourth@1x-2de61e4d.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs width">
+            <p class="catalog-describe">
+              Diver 300M Co-Axial Master Chronometer
+            </p>
+            <span class="catalog-price my-element">&#8364;1400</span>
+          </div>
+        </a>
+      </li>
+      <li class="catalog-item">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/fifth@1x-b1ed6003.webp 1x, /thewatchspot/assets/fifth@2x-c21e3308.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/fifth@1x-94794338.jpg 1x, /thewatchspot/assets/fifth@2x-87a0ab5b.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/fifth@1x-94794338.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs width">
+            <p class="catalog-describe">Taman Watch By Police For Men</p>
+            <span class="catalog-price my-element">&#8364;500</span>
+          </div>
+        </a>
+      </li>
+      <li class="catalog-item">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/sixth@1x-f09d0e8c.webp 1x, /thewatchspot/assets/sixth@2x-b23f5bcb.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/sixth@1x-f16971d9.jpg 1x, /thewatchspot/assets/sixth@2x-2afcb0e3.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/sixth@1x-f16971d9.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs">
+            <p class="catalog-describe">Malawi Watch Police For Men</p>
+            <span class="catalog-price my-element">&#8364;555</span>
+          </div>
+        </a>
+      </li>
+      <li class="catalog-item">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/seventh@1x-f041c7f4.webp 1x, /thewatchspot/assets/seventh@2x-b4f1e409.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/seventh@1x-92b47b81.jpg 1x, /thewatchspot/assets/seventh@2x-8596c0e9.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/seventh@1x-92b47b81.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs">
+            <p class="catalog-describe">
+              Diver 300M Co-Axial Master Chronometer
+            </p>
+            <span class="catalog-price my-element">&#8364;1200</span>
+          </div>
+        </a>
+      </li>
+      <li class="catalog-item">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/eight@1x-b578544b.webp 1x, /thewatchspot/assets/eight@2x-0b7ee6d3.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/eight@1x-936d8005.jpg 1x, /thewatchspot/assets/eight@2x-ab393638.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/eight@1x-936d8005.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs">
+            <p class="catalog-describe">Greenlane Watch By Police For Men</p>
+            <span class="catalog-price my-element">&#8364;1000</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- New watches only for deskstop-->
+
+      <li class="catalog-item hid">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/9@1x-8784a563.webp 1x, /thewatchspot/assets/9@2x-b2091727.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/9@1x-6354940b.jpg 1x, /thewatchspot/assets/9@2x-aa113c0e.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/9@1x-6354940b.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs width">
+            <p class="catalog-describe">
+              Tube Watch S42 Date Steel With Black Case
+            </p>
+            <span class="catalog-price my-element">&#8364;359</span>
+          </div>
+        </a>
+      </li>
+      <li class="catalog-item hid">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/10@1x-95205b97.webp 1x, /thewatchspot/assets/10@2x-62537d4c.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/10@1x-46ad1153.jpg 1x, /thewatchspot/assets/10@2x-02c45653.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/10@1x-46ad1153.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs width">
+            <p class="catalog-describe">
+              Tube Watch S42 Date Steel With Black Case
+            </p>
+            <span class="catalog-price my-element">&#8364;400</span>
+          </div>
+        </a>
+      </li>
+      <li class="catalog-item hid">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/11@1x-7c2f7843.webp 1x, /thewatchspot/assets/11@2x-954ef85b.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/11@1x-146fec67.jpg 1x, /thewatchspot/assets/11@2x-efe779f3.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/11@1x-146fec67.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs width">
+            <p class="catalog-describe">
+              Tube Watch S42 Date Steel With Black Case
+            </p>
+            <span class="catalog-price my-element">&#8364;519</span>
+          </div>
+        </a>
+      </li>
+      <li class="catalog-item hid">
+        <a href="" class="link-hover">
+          <div class="cat-list-link-wrapper">
+            <picture>
+              <source
+                srcset="/thewatchspot/assets/12@1x-f79c2dff.webp 1x, /thewatchspot/assets/12@2x-b4afbf22.webp 2x"
+                type="img/webp"
+              />
+              <source
+                srcset="/thewatchspot/assets/12@1x-385a5321.jpg 1x, /thewatchspot/assets/12@2x-51794a92.jpg 2x"
+                type="img/jpg"
+              />
+              <img
+                class="catalog-img"
+                src="/thewatchspot/assets/12@1x-385a5321.jpg"
+                alt="retina-picture"
+                width="276"
+                height="274"
+              />
+            </picture>
+            <svg class="catalog-icon catalog-item-icon" width="24" height="24">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <svg
+              class="catalog-icon catalog-overflow-icon"
+              width="24"
+              height="24"
+            >
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#heart"></use>
+            </svg>
+            <div class="overflov">
+              <p class="overflow-subtitle">DESCRIPTION</p>
+              <p class="overflow-description over-descr">
+                Richly detailed with an understated design - the Police
+                Men&#39;s Greenlane watch.
+              </p>
+              <p class="overflow-subtitle">DETAILS &#38; FEATURESTION</p>
+              <ul class="overflow-description overflow-list">
+                <li class="overflow-item">Gender: man</li>
+                <li class="overflow-item">Size: 46&#215;54.5mm</li>
+                <li class="overflow-item">Case Colour: Steel</li>
+                <li class="overflow-item">Band Material: Metal</li>
+                <li class="overflow-item">Case Material: Metal</li>
+                <li class="overflow-item">Features: Multifunction</li>
+                <li class="overflow-item">Water Resistant: 5 (ATM)</li>
+                <li class="overflow-item">Band Colour: Steel</li>
+              </ul>
+            </div>
+          </div>
+          <div class="costs width">
+            <p class="catalog-describe">
+              Tube Watch S42 Date Steel With Black Case
+            </p>
+            <span class="catalog-price my-element">&#8364;400</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <button class="button catalog-button" type="button" data-modal-open>
+      BUY NOW
+    </button>
+  </div>
+</section>
+
+      <!--section New watches-->
+<section class="section new-watches">
+  <div class="container">
+    <h2 class="new-watches-title">New watches</h2>
+    <p class="new-watches-description">
+      Green And Bronze—The Match Made In Heaven
+    </p>
+    <ul class="new-watches-list">
+      <li class="item">
+        <picture>
+          <!--Desktop screen-->
+          <source
+            media="(min-width: 1280px)"
+            srcset="/thewatchspot/assets/img-1_desk@1x-cf2b12a7.webp 1x, /thewatchspot/assets/img-1_desk@2x-d53b8889.webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 1280px)"
+            srcset="/thewatchspot/assets/img-1_desk@1x-0a40c3b8.jpg 1x, /thewatchspot/assets/img-1_desk@2x-574eee1c.jpg 2x"
+            type="image/jpg"
+          />
+          <!--Tablet screen-->
+          <source
+            media="(min-width: 768px)"
+            srcset="/thewatchspot/assets/img-1_tab@1x-e91469da.webp 1x, /thewatchspot/assets/img-1_tab@2x-87c0f029.webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/thewatchspot/assets/img-1_tab@1x-d710f8ee.jpg 1x, /thewatchspot/assets/img-1_tab@2x-613e299f.jpg 2x"
+            type="image/jpg"
+          />
+          <!--Mobile screen-->
+          <source
+            media="(max-width: 767px)"
+            srcset="/thewatchspot/assets/img-1_mob@1x-8a5dddd8.webp 1x, /thewatchspot/assets/img-1_mob@2x-570c2783.webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcset="/thewatchspot/assets/img-1_mob@1x-ddaa0adb.jpg 1x, /thewatchspot/assets/img-1_mob@2x-d582a0c4.jpg 2x"
+            type="image/jpg"
+          />
+          <img
+            src="/thewatchspot/assets/img-1_mob@1x-ddaa0adb.jpg"
+            alt="Watch on hand"
+          />
+        </picture>
+      </li>
+      <li class="item">
+        <picture>
+          <!--Desktop screen-->
+          <source
+            media="(min-width: 1280px)"
+            srcset="/thewatchspot/assets/img-2_desk@1x-23ab7c1b.webp 1x, /thewatchspot/assets/img-2_desk@2x-ef5e06fa.webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 1280px)"
+            srcset="/thewatchspot/assets/img-2_desk@1x-f8855b7b.jpg 1x, /thewatchspot/assets/img-2_desk@2x-96a133cc.jpg 2x"
+            type="image/jpg"
+          />
+          <!--Tablet screen-->
+          <source
+            media="(min-width: 768px)"
+            srcset="/thewatchspot/assets/img-2_tab@1x-0c4909b8.webp 1x, /thewatchspot/assets/img-2_tab@2x-740286b1.webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/thewatchspot/assets/img-2_tab@1x-8aadde7f.jpg 1x, /thewatchspot/assets/img-2_tab@2x-a9f73192.jpg 2x"
+            type="image/jpg"
+          />
+
+          <!--Mobile screen-->
+          <source
+            media="(max-width: 767px)"
+            srcset="/thewatchspot/assets/img-2_mob@1x-ca190898.webp 1x, /thewatchspot/assets/img-2_mob@2x-e2924fc0.webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcset="/thewatchspot/assets/img-2_mob@1x-be21e76d.jpg 1x, /thewatchspot/assets/img-2_mob@2x-b0bd98a3.jpg 2x"
+            type="image/jpg"
+          />
+          <img src="/thewatchspot/assets/img-2_mob@1x-be21e76d.jpg" alt="black watch" />
+        </picture>
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <!--section Sale-->
+<section class="section sale">
+  <div class="container">
+    <h2 class="sale-title my-element" id="sale">Sale</h2>
+    <div class="sale-wrapper">
+      <div class="block-photos">
+        <ul class="sale-list">
+          <li class="item">
+            <picture>
+              <!--Desktop screen-->
+              <source
+                media="(min-width: 1280px)"
+                srcset="data:image/webp;base64,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 1x, /thewatchspot/assets/image-1_desk@2x-2ee2945e.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(min-width: 1280px)"
+                srcset="/thewatchspot/assets/image-1_desk@1x-7f3b88cd.png 1x, /thewatchspot/assets/image-1_desk@2x-ca69a0b5.png 2x"
+                type="image/png"
+              />
+              <!--Tablet screen-->
+              <source
+                media="(min-width: 768px)"
+                srcset="data:image/webp;base64,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 1x, /thewatchspot/assets/image-1_tab@2x-a1101913.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="/thewatchspot/assets/image-1_tab@1x-65e3ad11.png 1x, /thewatchspot/assets/image-1_tab@2x-e8e16cad.png 2x"
+                type="image/png"
+              />
+              <!--Mobile screen-->
+              <source
+                media="(max-width: 767px)"
+                srcset="data:image/webp;base64,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 1x, data:image/webp;base64,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 2x"
+                type="image/webp"
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="/thewatchspot/assets/image-1_mob@1x-55ed033f.png 1x, /thewatchspot/assets/image-1_mob@2x-1d1b9459.png 2x"
+                type="image/png"
+              />
+              <img
+                src="/thewatchspot/assets/image-1_mob@1x-55ed033f.png"
+                alt="black POLICE watch"
+              />
+            </picture>
+          </li>
+          <li class="item">
+            <picture>
+              <!--Desktop screen-->
+              <source
+                media="(min-width: 1280px)"
+                srcset="/thewatchspot/assets/image-2_desk@1x-7fab60d9.webp 1x, /thewatchspot/assets/image-2_desk@2x-34a7652f.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(min-width: 1280px)"
+                srcset="/thewatchspot/assets/image-2_desk@1x-c56ea0a6.png 1x, /thewatchspot/assets/image-2_desk@2x-1b0d2845.png 2x"
+                type="image/png"
+              />
+              <!--Tablet screen-->
+              <source
+                media="(min-width: 768px)"
+                srcset="/thewatchspot/assets/image-2_desk@1x-7fab60d9.webp 1x, /thewatchspot/assets/image-2_desk@2x-34a7652f.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="/thewatchspot/assets/image-2_desk@1x-c56ea0a6.png 1x, /thewatchspot/assets/image-2_desk@2x-1b0d2845.png 2x"
+                type="image/png"
+              />
+              <!--Mobile screen-->
+              <source
+                media="(max-width: 767px)"
+                srcset="data:image/webp;base64,UklGRhAHAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSDICAAABoAPbtmnbms+2bdv2C22boW3btm2/F9m2bftrY43vveZYP/tJREyA/G81XoVW9YolyV80xX9BnNI9urf/hL8PDs/YOrtROldixostyRb/DIv+uvJ0iZusvv3VwJt4DLbv9cxIk7z+rJOfwfjbrEIMibudNOA1u6pqpZnzC9h1Ek7zQG1gQp16b0FsfD/wfzPGV4i7CLyB7/kAfB+AveSnQRsGQOADn6/8CGGspbsHXg8ID01uli2GxIidIIGtlPdBfbyEaMc9C+q9or8U3KaEWjuw99ZK/pwtKKE1CuTPuopy8s9ka5KJdk9wL4wl6ke4tsUW9Ywh1f0Uot8W1A8nZ9UbzQVM0lvMtlZvC9tCvW1c3r4KevuoNsQS/fwBVU8hnATm3zIRxHlJtUQI64G6DcNMLq8GwW0ujNHLAfJBeu3IgoJ6Y8hmiv4aGq/flF+xLiHBKZZ3dURy5BbG2yTHcgvtUgpvdFzhLfwzQxuh3sNQmyqNp2JO9J0d/jpcqLtCM+wmIjlSC/cqlX7iYMx3GstiuFAUipfiiotdFH7JJ04OV+grTqb4Zu9ObDcGwWLo/017cfOajQA/A9gdy42ysBgaVCgzqGtMcXOqFewSh+9ZMAZVHMoBiwH2i8Ol7FR2aZwNb7K4/MSCHzR2qSSih+GHuC4NsOBjgri8MZoJw7xOvYoWYKe4nMJEC1HfqZQ/RQrN9RhOdUe0XxqL08uieaaTW3eiBcjrVFITKcCjGG4AVlA4ILgEAACQFQCdASpQAFAAPm0qkEYkIiGhLNs9UIANiWkAEgY5uPnfy546zR/FkyBWru+92cwAPqxxKaQ75v7AHif5xfqn2CP1q6v3o9/s6o4uBPFmNlAm/up71hdd0CFiBsDgQaS87c0FllsTPk2a0RXbfL0uvE+nBV9mLjJr4VbguRkHzYB3Wo/s6BFpFIPA2c9mOVYPemjTJwjkb+W63NOBKcgSHq/9jNkPc8FaUVOaT8iDNBXkLq7AAP79tPQv5EMz0BE8Eac0zOdG8zLc7+XML8TXO+i9QTJ5swlsDxLIVtt5ZYswOzqcWxn++Tttz0BY0Xtqhf+YpvQK7lFEDPre5HnnP4noWHUYBJld7A40lPSTEIdykeERTvmccJvR6rnOfh3FQ3ZGIM3hZJxDLzBHOlzlI61i3S/toSCOe8f/OORjvKcHF7v9HTEyqKedOLbWkNGNxDAMyknstnZEKhNQnpv/LOvj//lxvCz0JqIJjdw4H7BBeXoGMOLdnPb+EptQJcX4ZU7Isj+8Vg+SedFMB8jGLA1AH9I2bckj6ZcnFc87d+M2z3WENc7BRk1ntJGNxDISt5jL8OTTFTP2PEFgHQVk/aDun8UxYH2dhNHR4rujx2kKVTc9L/s0xcb45jB2N/y99eYq1R+UvcgTJ6C1jpOL0nJ2kV+EO17bJUtT7Xd+KGc9UHCOz7P3H7Qj2J2M2JhtOoQeDiZRy984TQqMSXsQz7G5S1DtlIDHjlVs9nQxczQvxa/zXZX6HExZKpy5oQ+wz9SMimUrtvntDTSQsu7C3DkJiqlX/N+vmeyaDQFeOJuKvJqWk4odCQryM5N+X/I6pWjlepSvCraobSP4fRaUHxjYInI3169zCVM7M0m4ARjh9z2mGf6Jmb5Lo8w6zk5aCdGNBRnxw5nd2jM/MgPAkIqgiiqp9nhHGxtAZSOIFBPSQzv+p6A1Nj73Is2a+zL0ewrTKo9DKtz7NXSXmkhc9wXH1EjQ/4Tsbgj6BOqGy24oZKh3GSgUXpxYO7x0cowssfy5VqI7ffEPsQzuUMFATfnp70ep6XDo1Q0wj+p6UjIKyJK4VW1/2FCjJwV9vQ4k++JojBUrzyeyGuSHk0scx7gqUfTYL9RU0H1jSBqoSQ8xODsx6ijyeMxOThNqAb4GLaQIfi4r/nR+9IQwbQ8G2tv5CCKe1QG0ksvoGC6flS2PXIWm+is3DTo1cHTTeoCP8LsXChSq6IfgadrLEGYHiJvnjUWQTssmLUp+TcsxZE8OTVi9DEqBWDUkymcq+t1qZ9FKmdf0k9HzT5ZDKbUB+ZAR1CIDsp2yYvuNx2/Fe8VT+b94y7V8CO20oPHL2KnQI92ccj3/ldw+ynqhe+gEIsiCamUzPc2Swn0lLr9MAaqQ7gGcEk6AONbLnhAQIn3yXFMWYXaeklPlP/1m93iCMrnmDukns4XhQOefjndbkVzEM6aFmdU4zWcdGNrvf4hJlEv4gQlVbckNu5TmzC9owtrUPlvUIrKqJ/R47ON+hc2aa1/uF8NPJ6Zl12Gn2XXpAudbnzRgHbs0X+fQXWsE17Q8ryjQMm/YRa0JgjBVBpoa6ep2XTd6T+5u//oef/gkP/9AAAAAAA== 1x, /thewatchspot/assets/image-2_mob@2x-3cfa08d6.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="/thewatchspot/assets/image-2_mob@1x-09397902.png 1x, /thewatchspot/assets/image-2_mob@2x-cdb533bb.png 2x"
+                type="image/png"
+              />
+              <img
+                src="/thewatchspot/assets/image-2_mob@1x-09397902.png"
+                alt="black POLICE watch"
+              />
+            </picture>
+          </li>
+          <li class="item">
+            <picture>
+              <!--Desktop screen-->
+              <source
+                media="(min-width: 1280px)"
+                srcset="data:image/webp;base64,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 1x, /thewatchspot/assets/image-3_desk@2x-7becf180.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(min-width: 1280px)"
+                srcset="/thewatchspot/assets/image-3_desk@1x-fdf760e6.png 1x, /thewatchspot/assets/image-3_desk@2x-4c5fa9f8.png 2x"
+                type="image/png"
+              />
+              <!--Tablet screen-->
+              <source
+                media="(min-width: 768px)"
+                srcset="data:image/webp;base64,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 1x, /thewatchspot/assets/image-3_desk@2x-7becf180.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="/thewatchspot/assets/image-3_desk@1x-fdf760e6.png 1x, /thewatchspot/assets/image-3_desk@2x-4c5fa9f8.png 2x"
+                type="image/png"
+              />
+              <!--Mobile screen-->
+              <source
+                media="(max-width: 767px)"
+                srcset="data:image/webp;base64,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 1x, data:image/webp;base64,UklGRvAOAABXRUJQVlA4WAoAAAAQAAAAnwAAnwAAQUxQSMAEAAABoAZt2xnJeitbHPZirKxt27ZtG70c9sHatm3bts2s2Wv2oN6Did5879T+24iYAPjt/1+uklvSptyhWMS9+ZIkUrZ2I9acicdErxxaNKRiQFIisP+Wr2jgtfk13ZIENvspNN65tAx7PhO/oslXW7FmGxGLBO/V5qveSyS6RuYp5Vyk+7gxRyHXkXQMO26dFSS+vgwrPqM+oAWvt5e4CJoVjxZVOkoc2Ea40MJKc/G1dKLFt8hi89mK1n87UGRFnqAQJ3kKq2McCvJysKBaozjv24Tk9kQgOERI9VGkxwVU3TFPKE/y1vQUS8O7KNiviI8HSOLIfgjFfFMWhBQdh6L+OkgI8kUU+Z8CyPQMxT5dstxFFP1Qa2XaffyD8B4Obmqhdl+Rx+3BVhmFbCoZLSFtQEZfF7NA8jPI6oeK9HYisx9yU+uC7Co2Yiv4wRa0Yj4zNMmbUgyyfC8dnWzI9Hw6ClcJRaj0RrbXE/F7wtePQBrhyLiDxiXO7tN4wlmCG4lnrKWk0ACN//BDfFiewnLDznd0d1rnx3c9r7MsTTBoL4VbBh2oCACLVT7vGtWpfGabFDj+B5GFPgBpS9aM2etUmQQgL0gwxJncvFTxRrybkBv+X+IbIn4YVxo0ynN/ElieDTSWWawgoisUAEBebASGmpcFDZwO6nIDR8/koFOOUMxx/ukDOt3aR3UIgsSzLDWgvHllDLgUqMHoKosVo5wzKoHJQU59rc1rqG9tKqCYp/3SE3Ha4m7N7Z8NCGZSdLU3r7GuEUA4tHz1zkMcjsg+TcpmkIBq6HlyVXW42oHw3abraG5eRm1KTuAwWltN81J907LEC3hs4dRSwDx4oKU5cNlJQ6w7gXNaZDZaangPBFdomA9ser5We0Jhhtr7ED4gUu0Mhd5qQ4FR2weVzRRaqnyoGcJICKrOo1BABfFxPTY63FeLoiBrQIxhIgY1dqGQ/JsWXOnDQThqrU8BHmlCRRbfENRchMQubfiskOh6oPYAEot14IeSbkJrgNp/SiT66sEPeLN7OmHJ33U8AJLtdf3/xWRZRNlmHXmGOk/QqGAIIi7PL5qwlWjgWhpBRiGeaqVWsnw6y6WdEodGjqMBDwxDHH/80aEZHQNHIeLtrfbyHtbxGe9CY5sT6WZC4stQ/dy8TiU96NRbsaV2YuEuNDqYSLLXZum+t2dc74q5JTOSl7TPrN3tCCK6uoSvuv94CRruAKqHiKn+PHdo65Q/HcPtdns/u93ucPw5atqMVVunTT7tQrLBZMKtIcJXQNbnG1OL6MAOpjISKs/TUqB8iCWZVBmOZgJtBz9KemJQYgIzh3MD+ezfWDkGVhzMyhRLgIMRJdQa4OCjMFi1yUsmmoF15ZMsdAVLN5wQJTpXY7D8ZpE9ch3NCQIc+lJcLUGQ8gyXoNZKogCQ537930+xvGsOQg1tv/7onFwiSRhrAxHXn3I0XgwJs0JA2NIsy9kPbwtPByKvabVtniD8YpPOkrul8nlVNxvwGNJi2QOVeApxFU6h69oiez7gNXurVXcR8a+z8SZN6lnKDfjO2qQtgJS7au8RGw/fchnzGpKSyXOWqVSv3//i31w/unXuiCGtygUnKRIPCkubHH77/xcqVlA4IAoKAACwMACdASqgAKAAPm0yk0ckIyGhKFTrqIANiWlu3Qn0n+7/hB4Tf6r8S/NvyX+/fcbkONZ/4PDH8o09hwR3s8APVB8J9Gn/J8LX7h/zvYD/QnrAf6/kG+vPYQ8tn2U+jMdaRpINy4wiqPn1xSx/AYPHkaRuMqtaWmlxR2U458g+1G84jNjoTLM5yoy8Oaon8IKyamhZz5d/dnSJwJj7hEIvL5GNg9ZztMDJNU5rKRf+HVTcUswvwqAdGlfesid2yaxyi4GOvEf6bgkI5wUgSvq6l4xA4szZ/1FmISCV08FGcJC4wbBkEf7enszbFDa6/9oABO0Y1ee7KFnxcg845VdrXKsMb3kUeSXgxehbe3kPmA+45b9MGWOW9SM3r+GPeIcw03TPHqbBtJXco8XdZAB5AS9ZgSGt/3oyuj5y7I0AQUi+k4L+Coy6DeZiaXIvtjTzVQJJJ7WNw0E3JknejxeDit4NKw23vAtzPkCx6o/Negv3Z2UUvcaZX3i59jVV4Z/jde9O29Ci9BuXGEVQQAD+/TZoCVajJLuHwm+lF8/2HE0l/Qsm0xJTbFKBb5USmtn9xIC3MG1rqcrfZgqG9hsfOdsGkI5v8tOKI8w/QuSGCg2jndHpi1HveiC5Quh2aO7K+fc7LvBVbDyg8bThGMGJUJZz6e8y2DEsIpQf46fOkLi8+YZwdxCQeAtR1fBh8mw+vPdFXsIujZNye5b/we0LJfn89Cso6m7Ldc7heLLZ21SleoOE+3syQvYGuFk/4pfqh6HnvItdptUER+bmWBZBKHp/6ePdiqSR7WiNpfVT3e8VY6sOg4Ig/RP/wTnq6FxzdM09PZfB08QEnitaEem2QS9ary06Weh5kufc/pQiq6F2sJwcFzNRhVRgIFGR/Tmqvo5s6FJ3Zpf81l471lJsC4YJmbVHbPRb8eKx7KJ3N1JqZF65JQhCz3J9IEXfyr2eyfdI4f3NE2VRFUbNK28aAjb5E7YrZ+p3gH0Nt/pfqOy0+nI/09E8mnMDT9fjJC8kfd1HkMzdhaE+jCWcd6M3VZbp3P5pqxtQp8nXPpHXzhC3qF9b7oWdXaaKhrxFT6+HxKXS1bzaPw0X6FUOyQHSgIubO+dSJIGASPfj/3ekBDc1KE0kW5U8PcX78OdAoHO0Z7icpnS+YIuUwgujdbZ6QPomFTnomOJ3xmcTcC5OBcTSNO6zXX5wkD2rvWCQXhpV5Xv4TG/mLVrmt0cClcAZHJuT9937ybApE5YNIWYwFH/h6i1a3Ldb1L1lIEpFOTP8f6cMEghwDC3DLPYpPM5YmfMHk1p82F3R4prmh0dkhwc3Mm2fqQPUPFpLDUaTz8cTE6Kp3D/rrSdCMWICBhMmamhU5NFQuCtCE8fok/MeKFSR2rbzT1ekl3gHhX6N0uKExAwyKszWjPh0hGEo6zVssJsQmh/veq967Wqw/laXXYzAUYo7Q93FjJQ9PIZZcIk/hOv1t4eJs4FVnkRDO8IFj3OgVv8yVr2AptF1R+NCKIKJOCs6ttJrdfcmXBzfwWdo45qzyMc5ZGlgmYeR6Idxj3ilkPMWzkl5uI9DvHKGkkqtdimbF7gb4uW1gpCXigpKD2WMglESnohWbLgXlpNjgtqc+1BtXWtFwNWU1qG4AWSxgc51baoxJbhQ14ez1lcH2jIWrl6ui2E2wFFbCmq189aLkcIdvnoabUpH2gLvsS5E58XcCnBwnALHNpPFFpnbS1lycvNds9OVRJxIff5Y2+0GhqZ4/GsiUQd7GODxzRDyGO+FG6zN4TH717qdJhvObuIzWkyWyVU67H6UE6EWDrYg+nJapOpWVWWw3XA6n775ZXRdNMlg/Q+AVwAsmsSCXJ/7/yWOMTyMTy1J8a5YP5t4cce2dQd2evvxeCGyxt/3CDBO5tfCqSWD2TkeAl28DQuaHJ1G2Z4b/tnKrflplkzGK4hDFZp8JXXYQ1Ch7vS4xFpnK/nRQBY+/yGB3i4YlYLCPBIDupk7yTTX95X/CnEH++RFzq1uFQIsgzGs5SYf4A1SZrbF36kFytyS44CTWfVqaJSvP+DJKqKbYN0my+P5eNzTXJsy2kGePoEWGNNogJrMGdkRwBV3cTfwD42tmpzeHpy53jD5r141NDFty1tR6sO9CA50/gIG3VDSTj1cBdARNFS/o0ExjCJohsYCOD19Z9lAL1KInsmpqdLY0wrp+bQ5GFwShLfuXOU7NCkUHMK8mC55J2O/8mEBUqCDuvJ7ljc3O9fk9vQI+lWsiijszH/x5X/+t2f/RmP/9h3DOOyWn+91ofgOJEXs0SDPBXJaJ7gMVJEAwdNpIjWH7s+ADov5XHiqm34ycB8VmT6lz2diP8xOekGKWbmavvs1wzmqz+7X5t76qGhxzFv3pvrtEYYKAHSQYenJ39V1K8Q8u1LY8c5V+w4oblCgaluS6SHw8sNxfxUtdQ8yOWSNWFtZUXvXw551VBiBJ8mHT3rIA0HKrREs0PUQzPe/dQJDmM0ETKq9DJBinF/+thvUe74g1L4GM4pm9E6i1Jmnwr/sLubqcik+R4i0nvzor1VyDxLjGqFS90D+83MIDVPNJutOc3hxQmqM9DNwJWbsIcmw1xp96sHwqs/8PYocBSFT78Ew1q69pnJMpQatBg9wTs5Wdo48xtKTzhUeXO+RaRJNOs0OVKU4n0URI4aZtksCJqGNWbwoA1KoSba6zacPt71sEHgWOf3bp6u/4kV+SdIBgoZ66HFpbzbCnREqMt2NN1imSu17/GqqMCgiNn4ySPlqgW2snJKcTa4RqSLJiU/zopxWqEntzj+ZJ8lCh+Sckstk95Z2YGFGSVetI4I5TG9Iz0Mm46cXrCJOuDefBOnQItC7ZT/6j8MkVlH92hja3lOL+cWmYYodZ7JvSkS1mGM9M12p0u84xImzfLs8an0vZbDgNexvc3tDe7CBL5F/q9s3DAvfXRImOlu4Xhn42NG71PLkTLxS358iyYzZi2UUqa+n6ExwGuO5MKUcWm2RgYoxAoPGrXxSVJEypRyz0G+5W2YDY4/PXZ7btNKKq+SuN7P6cDvCrPE5Erl4g5cRHSUks7JUa1YYNl2ZZVT97haMexSnsDWXaXwk+wKxGVgh/sBQlvnZXVvoxQ72Ddks1aIlYZyFlxB2V519eNErYAaUZnJk/AU+28lruaY2dyZsgpRuTXJpktzYCkknf7e/+V0HLuO5X5lyOgBfbnbgA046OGQFNySCs1wDwEpqoCvGRrhje1az/odcd8pbLLB3q804TUQBP+D8SkuPfjvfG6NY0MTchhK6W6cye5ZKMs25itfow0VOIRaufTG/4IITLMXDIs1HXwUhTwg40ElAAEJz8HtbaBm7Ab0fPdDq4NZE5LDQAhI4cQamasZcqlHMUAYci4Ro6SVREW/jg5cLoEEllBfq7IAAAA== 2x"
+                type="image/webp"
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="/thewatchspot/assets/image-3_mob@1x-238cd06a.png 1x, /thewatchspot/assets/image-3_mob@2x-064ac5b9.png 2x"
+                type="image/png"
+              />
+              <img
+                src="/thewatchspot/assets/image-3_mob@1x-238cd06a.png"
+                alt="black POLICE watch"
+              />
+            </picture>
+          </li>
+          <li class="item">
+            <picture>
+              <!--Desktop screen-->
+              <source
+                media="(min-width: 1280px)"
+                srcset="/thewatchspot/assets/image-4_desk@1x-839faceb.webp 1x, /thewatchspot/assets/image-4_desk@2x-c33a0422.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(min-width: 1280px)"
+                srcset="/thewatchspot/assets/image-4_desk@1x-4350b02c.png 1x, /thewatchspot/assets/image-4_desk@2x-b9b7ed64.png 2x"
+                type="image/png"
+              />
+              <!--Tablet screen-->
+              <source
+                media="(min-width: 768px)"
+                srcset="/thewatchspot/assets/image-4_desk@1x-839faceb.webp 1x, /thewatchspot/assets/image-4_desk@2x-c33a0422.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="/thewatchspot/assets/image-4_desk@1x-4350b02c.png 1x, /thewatchspot/assets/image-4_desk@2x-b9b7ed64.png 2x"
+                type="image/png"
+              />
+              <!--Mobile screen-->
+              <source
+                media="(max-width: 767px)"
+                srcset="data:image/webp;base64,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 1x, /thewatchspot/assets/image-4_mob@2x-f3b5c5f4.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="/thewatchspot/assets/image-4_mob@1x-4dc97d7e.png 1x, /thewatchspot/assets/image-4_mob@2x-3ed002eb.png 2x"
+                type="image/png"
+              />
+              <img
+                src="/thewatchspot/assets/image-4_mob@1x-4dc97d7e.png"
+                alt="black POLICE watch"
+              />
+            </picture>
+          </li>
+        </ul>
+        <picture class="big-photo">
+          <!--Desktop screen-->
+          <source
+            media="(min-width: 1280px)"
+            srcset="/thewatchspot/assets/image-5_desk@1x-86455fd6.webp 1x, /thewatchspot/assets/image-5_desk@2x-e7c838db.webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 1280px)"
+            srcset="/thewatchspot/assets/image-5_desk@1x-05068e25.png 1x, /thewatchspot/assets/image-5_desk@2x-f1bb9dc0.png 2x"
+            type="image/png"
+          />
+          <!--Tablet screen-->
+          <source
+            media="(min-width: 768px)"
+            srcset="/thewatchspot/assets/image-5_desk@1x-86455fd6.webp 1x, /thewatchspot/assets/image-5_desk@2x-e7c838db.webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/thewatchspot/assets/image-5_desk@1x-05068e25.png 1x, /thewatchspot/assets/image-5_desk@2x-f1bb9dc0.png 2x"
+            type="image/png"
+          />
+          <!--Mobile screen-->
+          <source
+            media="(max-width: 767px)"
+            srcset="/thewatchspot/assets/image-5_mob@1x-ca399929.webp 1x, /thewatchspot/assets/image-5_mob@2x-5e431ebb.webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcset="/thewatchspot/assets/image-5_mob@1x-3c78f5a0.png 1x, /thewatchspot/assets/image-5_mob@2x-1b153278.png 2x"
+            type="image/png"
+          />
+          <img
+            src="/thewatchspot/assets/image-5_mob@1x-3c78f5a0.png"
+            alt="black POLICE watch"
+          />
+        </picture>
+      </div>
+      <div class="sale-info">
+        <div class="sale-info-wrapper">
+          <h3 class="description-title">Greenlane Watch By Police For MenHT</h3>
+          <p class="sale-description">Product tag: PEWJK2227003</p>
+          <div class="price-blok">
+            <p class="new-price">&#8364;700</p>
+            <p class="old-price">&#8364;1000</p>
+          </div>
+        </div>
+        <div class="sale-info-wrapper">
+          <h4 class="sale-subtitle">Description</h4>
+          <p class="sale-description description-watch correction">
+            Richly detailed with an understated design - the Police Men&#39;s
+            Greenlane watch features a versatile multifunction design that fits
+            effortlessly into work and play. The steel case is adorned with a
+            semi-transparent black dial. The timepiece exhibits a contrast
+            through a black IP bracelet with matching crown and pushers.
+          </p>
+        </div>
+        <h4 class="sale-subtitle">DETAILS &#38; FEATUREStion</h4>
+        <ul class="sale-description description-watch">
+          <li class="item">Gender: man</li>
+          <li class="item">Size: 46&#215;54.5mm</li>
+          <li class="item">Case Colour: Steel</li>
+          <li class="item">Band Material: Metal</li>
+          <li class="item">Case Material: Metal</li>
+          <li class="item">Features: Multifunction</li>
+          <li class="item">Water Resistant: 5 (ATM)</li>
+          <li class="item">Band Colour: Steel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="section footer">
+  <div class="container footer-wrapper">
+    <div class="footer-all-items-thumb">
+      <div class="footer-content-thumb">
+        <div class="logo-adress-thumb">
+          <a href="./index.html">
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="data:image/webp;base64,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 1x, /thewatchspot/assets/logo-footer-small-x2-fb104224.webp 2x"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="data:image/webp;base64,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 1x, /thewatchspot/assets/logo-footer-big-x2-05fa3d53.webp 2x"
+              />
+              <img
+                src="data:image/webp;base64,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"
+                alt="logo"
+                class="footer-logo"
+              />
+            </picture>
+          </a>
+
+          <address>
+            <ul class="list contact-list">
+              <li class="contact-list-item">
+                <a href="tel:+380684439426" class="contact link"
+                  >+380 (68) 443-94-26</a
+                >
+              </li>
+              <li class="contact-list-item">
+                <a
+                  href="https://www.google.com/maps/place/1678+Pioneer+Rd,+Salt+Lake+City,+UT+84104,+%D0%A1%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D1%96+%D0%A8%D1%82%D0%B0%D1%82%D0%B8+%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B8/data=!4m2!3m1!1s0x8752f35b0826d399:0x2b26230524fd3ca3?sa=X&ved=2ahUKEwjHlayQr8z-AhWi8rsIHVp2BFQQ8gF6BAgLEAI"
+                  class="contact link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >1678 S. Pioneer Road Salt Lake City UT 84104</a
+                >
+              </li>
+            </ul>
+          </address>
+        </div>
+        <ul class="footer-menu list">
+          <li class="footer-menu-li">
+            <a href="#about" class="link footer-menu-item">About us</a>
+          </li>
+          <li class="footer-menu-li">
+            <a href="#catalog" class="link footer-menu-item">Catalog</a>
+          </li>
+          <li class="footer-menu-li">
+            <a href="#sale" class="link footer-menu-item">Sale</a>
+          </li>
+        </ul>
+      </div>
+      <ul class="social-list list">
+        <li class="social">
+          <a
+            href="https://facebook.com/"
+            class="footer-sotial-box"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="24" height="24" aria-label="facebook">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social">
+          <a
+            href="https://instagram.com/"
+            class="footer-sotial-box"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="24" height="24" aria-label="instagram">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social">
+          <a
+            href="https://youtube.com/"
+            class="link footer-sotial-box"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="24" height="24" aria-label="youtube">
+              <use href="/thewatchspot/assets/sprite-5025b898.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-info">
+      <p class="rights">&#169;2022 The Watch Spot. All rights reserved.</p>
+      <ul class="list conditions">
+        <li class="condition">
+          <p class="condition-box link">Privacy Policy</p>
+        </li>
+        <li class="condition">
+          <p class="condition-box link">Terms of Service</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <!-- Modal window -->
+<div class="backdrop is-hidden" data-modal>
+  <div class="modal">
+    <button class="close-modal" type="button" data-modal-close>
+      <svg class="close-btn" width="20" height="20">
+        <use href="/thewatchspot/assets/sprite-5025b898.svg#close-btn-window"></use>
+      </svg>
+    </button>
+    <div class="modal-img-clock">
+      <picture class="modal-clock-pic">
+        <!-- Descktop screen -->
+        <source
+          media="(min-width: 1280px)"
+          srcset="/thewatchspot/assets/1clock_desc@1x-32d3862d.webp 1x, /thewatchspot/assets/1clock_desc@2x-4b3df6b1.webp 2x"
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 1280px)"
+          srcset="/thewatchspot/assets/1clock_desc@1x-c909de6c.jpg 1x, /thewatchspot/assets/1clock_desc@2x-bb75d4d5.jpg 2x"
+          type="image/jpg"
+        />
+        <!-- Tablet screen -->
+        <source
+          media="(min-width: 767px)"
+          srcset="/thewatchspot/assets/1clock_desc@1x-32d3862d.webp 1x, /thewatchspot/assets/1clock_desc@2x-4b3df6b1.webp 2x"
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 767px)"
+          srcset="/thewatchspot/assets/1clock_desc@1x-c909de6c.jpg 1x, /thewatchspot/assets/1clock_desc@2x-bb75d4d5.jpg 2x"
+          type="image/jpg"
+        />
+        <!-- Mobile screen -->
+        <source
+          media="(max-width: 767px)"
+          srcset="/thewatchspot/assets/1clock_mob@1x-f2e6e9a5.webp 1x, /thewatchspot/assets/1clock_mob@2x-d9a7ab94.webp 2x"
+          type="image/webp"
+        />
+        <source
+          srcset="/thewatchspot/assets/1clock_mob@1x-bb05a2d4.jpg 1x, /thewatchspot/assets/1clock_mob@2x-98185010.jpg 2x"
+          type="image/jpg"
+        />
+        <img
+          class="modal-clock"
+          src="/thewatchspot/assets/1clock_mob@1x-bb05a2d4.jpg"
+          alt="clock"
+        />
+      </picture>
+      <div class="modal-clock-text">
+        <strong class="modal-wind-title">
+          Tube Watch S42 Date Steel With Black Case
+        </strong>
+        <p class="modal-wind-cost">&#8364;395</p>
+      </div>
+    </div>
+    <form class="modal-wind-form">
+      <div class="modal-wind-field">
+        <label class="modal-wind-label" for="usname">Full name</label>
+        <input
+          class="modal-wind-input"
+          type="text"
+          name="username"
+          id="usname"
+          required
+          placeholder="Enter your full name"
+        />
+      </div>
+      <div class="modal-wind-field">
+        <label class="modal-wind-label" for="usemail">Email</label>
+        <input
+          class="modal-wind-input"
+          type="email"
+          name="email"
+          id="usemail"
+          required
+          placeholder="Enter your email"
+        />
+      </div>
+      <div class="modal-wind-field">
+        <label class="modal-wind-label" for="uscard">Card number</label>
+        <input
+          class="modal-wind-input"
+          type="text"
+          name="card-num"
+          placeholder="Enter card"
+          size="18"
+          id="uscard"
+          minlength="16"
+          maxlength="16"
+        />
+      </div>
+      <div class="modal-wind-field">
+        <label class="modal-wind-label" for="usmessage"> Comments</label>
+        <textarea
+          class="modal-wind-text"
+          name="feedback"
+          rows="8"
+          placeholder="Enter your text"
+          id="usmessage"
+        ></textarea>
+      </div>
+      <button class="btn-sub" type="submit">SUBMIT</button>
+      <span class="modal-wind-desc">
+        By clicking on &#8220;Submit&#8221; button, you agree to our
+        <a class="modal-wind-link" href="">Privacy Policy</a>, and allow Promodo
+        to use this information for marketing purposes.
+      </span>
+    </form>
+  </div>
+</div>
+
+    
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    
+  </body>
+</html>
