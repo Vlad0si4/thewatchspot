@@ -1,11 +1,11 @@
 {
-  "name": "the-codefather",
+  "name": "thewatchspot",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/the-codefather/",
+    "build": "vite build --base=/thewatchspot/",
     "preview": "vite preview"
   },
   "devDependencies": {
