@@ -121,6 +121,7 @@
       border-radius: 4px;
     
       display: block;
+      
 }
 
 
@@ -153,6 +154,7 @@
   .footer-sotial-box:hover,
    .footer-sotial-box:focus {
      border: 1px solid #ffffff;
+     scale: 1.3;
    }
 }
 
