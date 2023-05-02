@@ -1,0 +1,6 @@
+import './js/annimator'
+import './js/header'
+import './js/mobile-menu'
+import './js/modal'
+import './js/swiper-initialize'
+import './js/catalog-icon'
